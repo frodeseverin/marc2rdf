@@ -39,8 +39,12 @@ either install ruby via rvm (Ruby Version Manager) or install ruby-dev
 #### UBUNTU INSTALL
 
 (for rdf-xml support)
-    sudo apt-get install libxml2-dev libxslt1-dev
+
+    sudo apt-get install ruby-dev libxml2-dev libxslt1-dev libyaml-ruby libzlib-ruby
     gem install bundler
+    
+    Debian adds a version postfix to the ruby executebles. Thus all references to ruby becomes
+    ruby1.8 and to gem it becomes gem1.8. 
 
 install needed gems given in Gemfile:
 
