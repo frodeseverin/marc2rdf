@@ -34,28 +34,43 @@ and convert to semantic triples (RDF) and optionally import to existing RDF stor
 
 ### INSTALL
 
-either install ruby via rvm (Ruby Version Manager) or install ruby-dev
+1.  Clone this repository form github
+
+    git://github.com/digibib/marc2rdf.git
+
+This creates a subdirectory called marc2rdf
+
+2. Either install ruby via rvm (Ruby Version Manager) or install ruby-dev
 
 #### UBUNTU INSTALL
 
-(for rdf-xml support)
+(for ruby and rdf-xml support)
 
-    sudo apt-get install ruby-dev libxml2-dev libxslt1-dev libyaml-ruby libzlib-ruby
-    gem install bundler
+    sudo apt-get install ruby-dev libxml2-dev libxslt1-dev libyaml-ruby libzlib-ruby rubygems
     
-    Debian adds a version postfix to the ruby executebles. Thus all references to ruby becomes
-    ruby1.8 and to gem it becomes gem1.8. 
+#### Debian note
 
-install needed gems given in Gemfile:
+Debian adds a version postfix to the ruby executebles. Thus all references to `ruby` becomes
+`ruby1.8` and references to `gem` becomes `gem1.8`. 
 
+3. Install RubyGems bundler
+
+    sudo gem install bundler
+
+If you can not or do not want to install RubyGems into system folder locations, please have a look at 
+http://docs.rubygems.org/read/chapter/3/
+
+4. Install needed gems given in Gemfile:
+
+    cd marc2rdf
     bundle install
 
-copy needed configuration files
+5. Copy needed configuration files
 
     cp ./config/config.yml-dist ./config/config.yml
     cp ./config/harvesting.yml-dist ./config/harvesting.yml
   
-and make changes as needed to fit your system
+Now you are ready to make changes to the YAML mappings as needed to fit your system
 
 ### RDF STORE
 
@@ -65,6 +80,10 @@ and make changes as needed to fit your system
 #### UBUNTU
 
     sudo apt-get install virtuoso-opensource
+
+Debian squeeze does not have a recent version of Virtuoso. Please compile from source as described in
+http://virtuoso.openlinksw.com/dataspace/dav/wiki/Main/VOSDebianNotes
+Debian wheezy comes with Virtuoso version 6.1.4
 
 ### PREPARATION
 
